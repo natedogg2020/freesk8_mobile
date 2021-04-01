@@ -1,9 +1,10 @@
 import 'dart:async';
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_blue/flutter_blue.dart';
+
 import '../components/crc16.dart';
 import '../widgets/throttleCurvePainter.dart';
 import '../subViews/escProfileEditor.dart';
@@ -16,11 +17,13 @@ import '../hardwareSupport/escHelper/appConf.dart';
 import '../hardwareSupport/escHelper/mcConf.dart';
 import '../hardwareSupport/escHelper/dataTypes.dart';
 
+import 'package:flutter_blue/flutter_blue.dart';
+
 import 'package:image_picker/image_picker.dart';
 
-import 'dart:io';
-
 import 'package:path_provider/path_provider.dart';
+
+import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class ESK8Configuration extends StatefulWidget {
   ESK8Configuration({
@@ -82,6 +85,49 @@ class ESK8ConfigurationState extends State<ESK8Configuration> {
   int _invalidCANID;
 
   bool _writeESCInProgress;
+
+  Barcode result;
+  QRViewController controller;
+  final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
+
+  // In order to get hot reload to work we need to pause the camera if the platform
+  // is android, or resume the camera if the platform is iOS.
+  @override
+  void reassemble() {
+    super.reassemble();
+    if (Platform.isAndroid) {
+      controller?.pauseCamera();
+    }
+    controller?.resumeCamera();
+  }
+
+  Widget _buildQrView(BuildContext context) {
+
+    var scanArea = MediaQuery.of(context).size.width - 200;
+    // To ensure the Scanner view is properly sizes after rotation
+    // we need to listen for Flutter SizeChanged notification and update controller
+    return QRView(
+      key: qrKey,
+      onQRViewCreated: _onQRViewCreated,
+      overlay: QrScannerOverlayShape(
+          borderColor: Colors.red,
+          borderRadius: 10,
+          borderLength: 30,
+          borderWidth: 10,
+          cutOutSize: scanArea),
+    );
+  }
+
+  void _onQRViewCreated(QRViewController controller) {
+    setState(() {
+      this.controller = controller;
+    });
+    controller.scannedDataStream.listen((scanData) {
+      setState(() {
+        result = scanData;
+      });
+    });
+  }
 
   Future getImage(bool fromUserGallery) async {
     final documentsDirectory = await getApplicationDocumentsDirectory();
@@ -278,7 +324,7 @@ class ESK8ConfigurationState extends State<ESK8Configuration> {
 
   @override
   void dispose() {
-    super.dispose();
+    controller?.dispose();
 
     tecBoardAlias.dispose();
 
@@ -315,6 +361,8 @@ class ESK8ConfigurationState extends State<ESK8Configuration> {
       ppmCalibrateTimer?.cancel();
       ppmCalibrateTimer = null;
     }
+
+    super.dispose();
   }
 
   void setMCCONFTemp(bool persistentChange, ESCProfile escProfile) {
@@ -2229,7 +2277,7 @@ class ESK8ConfigurationState extends State<ESK8Configuration> {
                       future: getApplicationDocumentsDirectory(),
                       builder: (BuildContext context, AsyncSnapshot<Directory> snapshot) {
                         if(snapshot.connectionState == ConnectionState.waiting){
-                          return Container();
+                          return Container(width: 200, height: 200);
                         }
                         return CircleAvatar(
                             backgroundImage: widget.myUserSettings.settings.boardAvatarPath != null ? FileImage(File("${snapshot.data.path}${widget.myUserSettings.settings.boardAvatarPath}")) : AssetImage('assets/FreeSK8_Mobile.jpg'),
@@ -2284,6 +2332,11 @@ class ESK8ConfigurationState extends State<ESK8Configuration> {
 
                 ],),
 
+                Text("Scan Result: ${result?.code}"),
+                SizedBox(
+                  height: 250,
+                    child: _buildQrView(context)
+                ),
               ],
             ),
           ),
