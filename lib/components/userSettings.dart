@@ -8,9 +8,9 @@ import '../globalUtilities.dart';
 class UserSettingsStructure {
   bool useImperial;
   bool useFahrenheit;
-  bool useGPSData;
 
   //TODO: these are technically board settings below
+  bool useGPSData;
   String boardAlias;
   String boardAvatarPath;
 
@@ -31,7 +31,7 @@ class UserSettingsStructure {
   {
     this.useImperial = values.useImperial;
     this.useFahrenheit = values.useFahrenheit;
-    this.useGPSData = this.useGPSData;
+    this.useGPSData = values.useGPSData;
     this.boardAlias = values.boardAlias;
     this.boardAvatarPath = values.boardAvatarPath;
     this.batterySeriesCount = values.batterySeriesCount;
@@ -58,6 +58,7 @@ class UserSettingsStructure {
         'wheelDiameterMillimeters': wheelDiameterMillimeters,
         'motorPoles': motorPoles,
         'gearRatio': gearRatio,
+        'useGPSData': useGPSData,
       };
 }
 
@@ -112,7 +113,7 @@ class UserSettings {
 
     settings.useImperial = prefs.getBool('useImperial') ?? false;
     settings.useFahrenheit = prefs.getBool('useFahrenheit') ?? false;
-    settings.useGPSData = prefs.getBool('useGPSData') ?? false;
+    settings.useGPSData = prefs.getBool('$currentDeviceID useGPSData') ?? false;
 
     settings.boardAlias =
         prefs.getString('$currentDeviceID boardAlias') ?? "Unnamed";
@@ -143,7 +144,6 @@ class UserSettings {
 
     await prefs.setBool('useImperial', settings.useImperial);
     await prefs.setBool('useFahrenheit', settings.useFahrenheit);
-    await prefs.setBool('useGPSData', settings.useGPSData);
 
     // Do not allow the internal "defaults" profile to update the board image or alias
     if (currentDeviceID != "defaults") {
@@ -152,6 +152,7 @@ class UserSettings {
           '$currentDeviceID boardAvatarPath', settings.boardAvatarPath);
     }
 
+    await prefs.setBool('$currentDeviceID useGPSData', settings.useGPSData);
     await prefs.setInt(
         '$currentDeviceID batterySeriesCount', settings.batterySeriesCount);
     await prefs.setDouble('$currentDeviceID batteryCellMinVoltage',
@@ -201,6 +202,7 @@ class UserSettings {
   static Future<bool> removeDevice(String deviceID) async {
     final prefs = await SharedPreferences.getInstance();
 
+    await prefs.remove('$deviceID useGPSData');
     await prefs.remove('$deviceID boardAlias');
     await prefs.remove('$deviceID boardAvatarPath');
     await prefs.remove('$deviceID batterySeriesCount');
@@ -222,6 +224,7 @@ class UserSettings {
     final prefs = await SharedPreferences.getInstance();
 
     // Setup new device with old device values
+    await prefs.setBool('$newDeviceID useGPSData', prefs.getBool('$deviceID useGPSData') ?? false);
     await prefs.setString('$newDeviceID boardAlias', prefs.getString('$deviceID boardAlias') ?? "Unnamed");
     await prefs.setString('$newDeviceID boardAvatarPath', prefs.getString('$deviceID boardAvatarPath') ?? null);
     await prefs.setInt('$newDeviceID batterySeriesCount', prefs.getInt('$deviceID batterySeriesCount') ?? 12);
@@ -253,6 +256,7 @@ class UserSettings {
     settings.boardAvatarPath =
         prefs.getString('$deviceID boardAvatarPath') ?? null;
 
+    settings.useGPSData = prefs.getBool('$deviceID useGPSData') ?? false;
     settings.batterySeriesCount =
         prefs.getInt('$deviceID batterySeriesCount') ?? 12;
     settings.batteryCellMinVoltage =
@@ -315,6 +319,7 @@ Future<bool> importSettings(String filePath) async {
     importSettings.settings.boardAvatarPath = value['boardAvatarPath'];
     importSettings.settings.boardAlias = value['boardAlias'];
     importSettings.settings.gearRatio = value['gearRatio'];
+    importSettings.settings.useGPSData = value['useGPSData'];
     await importSettings.saveSettings();
   }
 
