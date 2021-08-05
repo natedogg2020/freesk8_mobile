@@ -28,7 +28,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.5.0"
+    version: "2.6.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -180,7 +180,7 @@ packages:
       path: "."
       ref: freesk8_mobile
       resolved-ref: "2c91bc21087daab9b8614f4d3e6020ffdc7a86e0"
-      url: "git@github.com:FreeSK8/flutter_gauge.git"
+      url: "https://github.com/FreeSK8/flutter_gauge.git"
     source: git
     version: "1.0.8"
   flutter_image:
@@ -353,7 +353,7 @@ packages:
       path: "."
       ref: freesk8_mobile
       resolved-ref: "9dda38f8b057bf71e1ab3ef4dc149a49449b4cd8"
-      url: "git@github.com:FreeSK8/logger_flutter.git"
+      url: "https://github.com/natedogg2020/logger_flutter.git"
     source: git
     version: "0.7.1"
   logging:
@@ -556,7 +556,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0"
+    version: "1.8.1"
   sqflite:
     dependency: "direct main"
     description:
@@ -619,7 +619,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.19"
+    version: "0.3.0"
   transparent_image:
     dependency: transitive
     description:

@@ -1,0 +1,4 @@
+#Thu Aug 05 00:41:56 CDT 2021
+base.0=C\:\\Users\\luv2s\\Documents\\GitHub\\freesk8_mobile_unforked\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

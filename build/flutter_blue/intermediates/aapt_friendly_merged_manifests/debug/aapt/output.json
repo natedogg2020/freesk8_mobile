@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "applicationId": "com.pauldemarco.flutter_blue",
+  "variantType": "LIBRARY",
+  "elements": [
+    {
+      "outputType": {
+        "type": "AAPT_FRIENDLY_MERGED_MANIFESTS"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": -1,
+        "outputFile": "flutter_blue-debug.aar",
+        "fullName": "debug",
+        "baseName": "debug",
+        "dirName": ""
+      },
+      "path": "AndroidManifest.xml",
+      "properties": {
+        "packageId": "com.pauldemarco.flutter_blue",
+        "split": ""
+      }
+    }
+  ]
+}

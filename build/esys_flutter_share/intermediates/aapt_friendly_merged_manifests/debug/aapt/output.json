@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "applicationId": "de.esys.esysfluttershare",
+  "variantType": "LIBRARY",
+  "elements": [
+    {
+      "outputType": {
+        "type": "AAPT_FRIENDLY_MERGED_MANIFESTS"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": -1,
+        "outputFile": "esys_flutter_share-debug.aar",
+        "fullName": "debug",
+        "baseName": "debug",
+        "dirName": ""
+      },
+      "path": "AndroidManifest.xml",
+      "properties": {
+        "packageId": "de.esys.esysfluttershare",
+        "split": ""
+      }
+    }
+  ]
+}

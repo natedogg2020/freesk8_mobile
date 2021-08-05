@@ -34,7 +34,7 @@ dependencies:
   flutter_thermometer: ^1.0.0
   flutter_gauge:
     git:
-      url: git@github.com:FreeSK8/flutter_gauge.git
+      url: https://github.com/FreeSK8/flutter_gauge.git
       ref: freesk8_mobile
 
   oscilloscope: 0.0.3
@@ -61,7 +61,7 @@ dependencies:
   logger_flutter:
     #path: ../forked_packages/logger_flutter
     git:
-      url: git@github.com:FreeSK8/logger_flutter.git
+      url: https://github.com/natedogg2020/logger_flutter.git
       ref: freesk8_mobile
 
   device_info: ^1.0.0

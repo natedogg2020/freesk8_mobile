@@ -2540,7 +2540,40 @@ class ESK8ConfigurationState extends State<ESK8Configuration> {
                       }),
 
 
+
                 ],),
+                SizedBox(height:10),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+                      ElevatedButton(
+                      child: Text("Save Trip to Odometer"),
+                      onPressed: () async {
+                        FocusScope.of(context).requestFocus(new FocusNode()); //Hide keyboard
+                        try {
+
+                          // TODO: Make this an odometer save button hopefully
+                          if (tecBoardAlias.text.length < 1) tecBoardAlias.text = "Unnamed";
+                          widget.myUserSettings.settings.boardAlias = tecBoardAlias.text;
+                          // NOTE: Board avatar is updated with the image picker
+                          await widget.myUserSettings.saveSettings();
+
+                          // Update cached avatar
+                          widget.updateCachedAvatar(true);
+
+                          // Recompute statistics in case we change measurement units
+                          widget.updateComputedVehicleStatistics(false);
+
+                        } catch (e) {
+                          globalLogger.e("Save Settings Exception $e");
+                          ScaffoldMessenger
+                              .of(context)
+                              .showSnackBar(SnackBar(content: Text('Sorry friend. Save settings failed =(')));
+                        }
+                        ScaffoldMessenger
+                            .of(context)
+                            .showSnackBar(SnackBar(content: Text('Application settings saved')));
+                      }),
+
+                    ],),
 
 
                 Divider(thickness: 2,),

@@ -1,0 +1,238 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.derelictrobot.freesk8_mobile"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+9        android:targetSdkVersion="30" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:20:5-66
+14-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:20:22-64
+15    <!--
+16     This is for image_picker on Android SDK 30
+17     See: https://github.com/flutter/flutter/issues/63727#issuecomment-690070820
+18    -->
+19    <queries>
+19-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:6:5-14:15
+20        <intent>
+20-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:7:9-9:18
+21            <action android:name="android.media.action.IMAGE_CAPTURE" />
+21-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:8:13-73
+21-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:8:21-70
+22        </intent>
+23        <intent>
+23-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:7:9-9:18
+24            <action android:name="android.intent.action.VIEW" />
+25
+26            <data android:scheme="https" />
+27        </intent>
+28    </queries>
+29
+30    <uses-permission android:name="android.permission.BLUETOOTH" />
+30-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:22:5-68
+30-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:22:22-65
+31    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+31-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:23:5-74
+31-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:23:22-71
+32    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+32-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:24:5-80
+32-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:24:22-78
+33    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+33-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:25:5-79
+33-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:25:22-76
+34    <uses-permission android:name="android.permission.WAKE_LOCK" />
+34-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:26:5-68
+34-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:26:22-65
+35    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- READ and WRITE for esys_flutter_share -->
+35-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:27:5-77
+35-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:27:22-74
+36    <uses-permission android:name="android.permission.READ_CONTENT" />
+36-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:29:5-71
+36-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:29:22-68
+37    <uses-permission android:name="android.permission.WRITE_CONTENT" />
+37-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:30:5-72
+37-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:30:22-69
+38    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+38-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+38-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
+39    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+39-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
+39-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
+40    <!--
+41 io.flutter.app.FlutterApplication is an android.app.Application that
+42         calls FlutterMain.startInitialization(this); in its onCreate method.
+43         In most cases you can leave this as-is, but you if you want to provide
+44         additional functionality it is fine to subclass or reimplement
+45         FlutterApplication and put your custom class here.
+46    -->
+47    <application
+47-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:37:5-86:19
+48        android:name="io.flutter.app.FlutterApplication"
+48-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:38:9-57
+49        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+49-->[androidx.core:core:1.3.0-alpha01] C:\Users\luv2s\.gradle\caches\transforms-2\files-2.1\5d4bb21804d10adbf0ff604ad5577940\core-1.3.0-alpha01\AndroidManifest.xml:24:18-86
+50        android:debuggable="true"
+51        android:icon="@mipmap/ic_launcher"
+51-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:40:9-43
+52        android:label="FreeSK8" >
+52-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:39:9-32
+53        <meta-data
+53-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:41:9-123
+54            android:name="com.google.android.geo.API_KEY"
+54-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:41:20-65
+55            android:value="AIzaSyCsIGgpekUPDXwYhEhbUDxGuZSf33yQQxI" />
+55-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:41:66-121
+56
+57        <activity
+57-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:42:9-53:20
+58            android:name="com.derelictrobot.freesk8_mobile.MainActivity"
+58-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:43:13-41
+59            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+59-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:46:13-163
+60            android:hardwareAccelerated="true"
+60-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:47:13-47
+61            android:launchMode="singleTop"
+61-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:44:13-43
+62            android:theme="@style/LaunchTheme"
+62-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:45:13-47
+63            android:windowSoftInputMode="adjustResize" >
+63-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:48:13-55
+64            <intent-filter>
+64-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:49:13-52:29
+65                <action android:name="android.intent.action.MAIN" />
+65-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:50:17-68
+65-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:50:25-66
+66
+67                <category android:name="android.intent.category.LAUNCHER" />
+67-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:51:17-76
+67-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:51:27-74
+68            </intent-filter>
+69        </activity>
+70
+71        <!-- if you like background updates from background_locator package you'll keep these -->
+72        <receiver
+72-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:57:9-61:15
+73            android:name="rekab.app.background_locator.LocatorBroadcastReceiver"
+73-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:58:13-81
+74            android:enabled="true"
+74-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:59:13-35
+75            android:exported="true" />
+75-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:60:13-36
+76        <receiver
+76-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:62:9-67:20
+77            android:name="rekab.app.background_locator.BootBroadcastReceiver"
+77-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:62:19-84
+78            android:enabled="true" >
+78-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:63:13-35
+79            <intent-filter>
+79-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:64:13-66:29
+80                <action android:name="android.intent.action.BOOT_COMPLETED" />
+80-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:65:17-78
+80-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:65:25-76
+81            </intent-filter>
+82        </receiver>
+83
+84        <service
+84-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:68:9-73:15
+85            android:name="rekab.app.background_locator.LocatorService"
+85-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:69:13-71
+86            android:exported="true"
+86-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:71:13-36
+87            android:permission="android.permission.BIND_JOB_SERVICE"
+87-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:70:13-69
+88            android:stopWithTask="true" />
+88-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:72:13-40
+89        <service
+89-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:74:9-79:15
+90            android:name="rekab.app.background_locator.IsolateHolderService"
+90-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:75:13-77
+91            android:exported="true"
+91-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:77:13-36
+92            android:permission="android.permission.FOREGROUND_SERVICE"
+92-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:76:13-71
+93            android:stopWithTask="true" />
+93-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:78:13-40
+94
+95        <!--
+96             Don't delete the meta-data below.
+97             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+98        -->
+99        <meta-data
+99-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:83:9-85:33
+100            android:name="flutterEmbedding"
+100-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:84:13-44
+101            android:value="2" />
+101-->C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\android\app\src\main\AndroidManifest.xml:85:13-30
+102
+103        <provider
+103-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
+104            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+104-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-82
+105            android:authorities="com.derelictrobot.freesk8_mobile.flutter.image_provider"
+105-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-74
+106            android:exported="false"
+106-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
+107            android:grantUriPermissions="true" >
+107-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-47
+108            <meta-data
+108-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
+109                android:name="android.support.FILE_PROVIDER_PATHS"
+109-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
+110                android:resource="@xml/flutter_image_picker_file_paths" />
+110-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
+111        </provider>
+112
+113        <service android:name="com.timeyaa.flutternordicdfu.DfuService" />
+113-->[:flutter_nordic_dfu] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\flutter_nordic_dfu\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-75
+113-->[:flutter_nordic_dfu] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\flutter_nordic_dfu\intermediates\library_manifest\debug\AndroidManifest.xml:12:18-72
+114
+115        <provider
+115-->[:esys_flutter_share] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\esys_flutter_share\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+116            android:name="de.esys.esysfluttershare.EsysFlutterShareFileProvider"
+116-->[:esys_flutter_share] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\esys_flutter_share\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-81
+117            android:authorities="com.derelictrobot.freesk8_mobile.fileprovider.github.com/orgs/esysberlin/esys-flutter-share"
+117-->[:esys_flutter_share] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\esys_flutter_share\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-110
+118            android:exported="false"
+118-->[:esys_flutter_share] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\esys_flutter_share\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+119            android:grantUriPermissions="true" >
+119-->[:esys_flutter_share] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\esys_flutter_share\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+120            <meta-data
+120-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
+121                android:name="android.support.FILE_PROVIDER_PATHS"
+121-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
+122                android:resource="@xml/esys_flutter_share_filepaths" />
+122-->[:image_picker] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
+123        </provider>
+124
+125        <activity
+125-->[:url_launcher] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+126            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+126-->[:url_launcher] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+127            android:exported="false"
+127-->[:url_launcher] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+128            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+128-->[:url_launcher] C:\Users\luv2s\Documents\GitHub\freesk8_mobile_unforked\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+129        <activity
+129-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\luv2s\.gradle\caches\transforms-2\files-2.1\14c4f9a13a9b392434b3eae49fb23b66\jetified-play-services-base-17.2.1\AndroidManifest.xml:23:9-26:75
+130            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+130-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\luv2s\.gradle\caches\transforms-2\files-2.1\14c4f9a13a9b392434b3eae49fb23b66\jetified-play-services-base-17.2.1\AndroidManifest.xml:24:13-79
+131            android:exported="false"
+131-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\luv2s\.gradle\caches\transforms-2\files-2.1\14c4f9a13a9b392434b3eae49fb23b66\jetified-play-services-base-17.2.1\AndroidManifest.xml:25:13-37
+132            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+132-->[com.google.android.gms:play-services-base:17.2.1] C:\Users\luv2s\.gradle\caches\transforms-2\files-2.1\14c4f9a13a9b392434b3eae49fb23b66\jetified-play-services-base-17.2.1\AndroidManifest.xml:26:13-72
+133
+134        <meta-data
+134-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\luv2s\.gradle\caches\transforms-2\files-2.1\2e47df7781f5da51ee2e7e78ec9ad359\jetified-play-services-basement-17.2.1\AndroidManifest.xml:23:9-25:69
+135            android:name="com.google.android.gms.version"
+135-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\luv2s\.gradle\caches\transforms-2\files-2.1\2e47df7781f5da51ee2e7e78ec9ad359\jetified-play-services-basement-17.2.1\AndroidManifest.xml:24:13-58
+136            android:value="@integer/google_play_services_version" />
+136-->[com.google.android.gms:play-services-basement:17.2.1] C:\Users\luv2s\.gradle\caches\transforms-2\files-2.1\2e47df7781f5da51ee2e7e78ec9ad359\jetified-play-services-basement-17.2.1\AndroidManifest.xml:25:13-66
+137    </application>
+138
+139</manifest>
